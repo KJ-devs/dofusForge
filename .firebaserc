@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fusdoproject2": {
+      "hosting": {
+        "DofusProject3": [
+          "fusdoproject2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fusdoproject2"
+  }
+}

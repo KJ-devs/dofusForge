@@ -1,0 +1,378 @@
+<div class="bg-gray-800 text-white  h-full p-4">
+    <div class="flex items-stretch mt-20 ">
+        <div class=" flex flex-col bg-gray-900  border-solid border-2 p-10 rounded-xl">
+            <h1 class="text-4xl text-yellow-400 text-center font-bold">Caractéristiques</h1>
+            <div class="flex flex-row mt-8 ml-2 ">
+                <div class=" flex flex-col  bg-gray-900  ">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-right">{{personnageStatsVitalite}}</td>
+                                <td><img src="../../assets/img/life.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Pdv</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{{this.personnage.prospection}}</td>
+                                <td><img src="../../assets/img/pp.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Prospection</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{{personnageStatsSagesse}}</td>
+                                <td><img src="../../assets/img/sagesse.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Sagesse</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{{personnageStatsForce}}</td>
+                                <td><img src="../../assets/img/terre.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Force</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{{personnageStatsIntelligence}}</td>
+                                <td><img src="../../assets/img/feu.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Feu</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{{personnageStatsChance}}</td>
+                                <td><img src="../../assets/img/eau.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Chance</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{{personnageStatsAgilite}}</td>
+                                <td><img src="../../assets/img/agi.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Agilité</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class=" flex flex-col ml-5 bg-gray-900  ">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-right">7</td>
+                                <td><img src="../../assets/img/pa.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>PA</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">3</td>
+                                <td><img src="../../assets/img/pm.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>PM</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{{this.personnage.initiative}}</td>
+                                <td><img src="../../assets/img/ini.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Initiative</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{{this.personnage.critique}}</td>
+                                <td><img src="../../assets/img/critique.png"
+                                        class="ml-2 mr-2 w-image-width h-image-height" alt="">
+                                </td>
+                                <td>% Critique</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{{this.personnage.invocation}}</td>
+                                <td><img src="../../assets/img/invoc.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Invocation</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">{{this.personnage.soins}}</td>
+                                <td><img src="../../assets/img/soin.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Soin</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="flex flex-row mt-16 border-t-4  justify-center ">
+                <div class=" flex flex-col mt-12 bg-gray-900  ">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="text-center text-yellow-400">Ajouter des Caractéristiques</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{personnage.vitalite}}</td>
+                                <td><img src="../../assets/img/life.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Pdv</td>
+                                <td><input type="text" class="ml-2 bg-gray-800 w-16 rounded-md text-center text-white"
+                                        value="0" [(ngModel)]="personnage.vitalite"
+                                        (ngModelChange)="verifierSeuilVita($event)"></td>
+                            </tr>
+                            <tr>
+                                <td>{{personnage.sagesse}}</td>
+                                <td><img src="../../assets/img/sagesse.png"
+                                        class="ml-2 mr-2 w-image-width h-image-height" alt="">
+                                </td>
+                                <td>Sagesse</td>
+                                <td><input type="text" class="ml-2 bg-gray-800 w-16 rounded-md text-center text-white"
+                                        value="0" [(ngModel)]="personnage.sagesse"
+                                        (ngModelChange)="verifierSeuilSasa($event)"> </td>
+                            </tr>
+                            <tr>
+                                <td>{{personnage.force}}</td>
+                                <td><img src="../../assets/img/terre.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Force</td>
+                                <td><input type="text" class="ml-2 bg-gray-800 w-16 rounded-md text-center text-white"
+                                        value="0" [(ngModel)]="personnage.force"
+                                        (ngModelChange)="verifierSeuilCarac($event,'force')"></td>
+                            </tr>
+                            <tr>
+                                <td>{{personnage.intelligence}}</td>
+                                <td><img src="../../assets/img/feu.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Feu</td>
+                                <td><input type="text" class="ml-2 bg-gray-800 w-16 rounded-md text-center text-white"
+                                        value="0" [(ngModel)]="personnage.intelligence"
+                                        (ngModelChange)="verifierSeuilCarac($event,'intelligence')"></td>
+                            </tr>
+                            <tr>
+                                <td>{{personnage.chance}}</td>
+                                <td><img src="../../assets/img/eau.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Chance</td>
+                                <td><input type="text" class="ml-2 bg-gray-800 w-16 rounded-md text-center text-white"
+                                        value="0" [(ngModel)]="personnage.chance"
+                                        (ngModelChange)="verifierSeuilCarac($event,'chance')"></td>
+                            </tr>
+                            <tr>
+                                <td>{{personnage.agilite}}</td>
+                                <td><img src="../../assets/img/agi.png" class="ml-2 mr-2 w-image-width h-image-height"
+                                        alt="">
+                                </td>
+                                <td>Agilité</td>
+                                <td><input type="text" class="ml-2 bg-gray-800 w-16 rounded-md text-center text-white"
+                                        value="0" [(ngModel)]="personnage.agilite"
+                                        (ngModelChange)="verifierSeuilCarac($event,'agilite')"></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col mt-8 ">
+            <div
+                class="rounded-md 0 overflow-hidden h-24 w-24 ml-4 border-2 hover:bg-yellow-400 transition-colors trigger">
+
+                <a href="amulette" class="block w-24 h-24 p-2 ">
+                    <img class="h-full w-full" src="../../assets/img/amulette.png" alt="">
+                </a>
+            </div>
+            <p class="ml-5 w-32 text-left">{{amulette.name}}</p>
+            <div
+                class="rounded-md 0 overflow-hidden h-24 w-24 ml-4 mt-2 border-2 hover:bg-yellow-400 transition-colors">
+                <a href="bouclier" class="block h-24 w-24">
+                    <img class="w-full h-full object-cover" src="../../assets/img/bouclier.png" alt="">
+                </a>
+            </div>
+            <p class="ml-5 w-32 text-left">{{bouclier.name}}</p>
+            <div
+                class="rounded-md 0 overflow-hidden h-24 w-24 ml-4 mt-2 border-2 hover:bg-yellow-400 transition-colors">
+                <a href="anneau" class="block h-24 w-24">
+                    <img class="w-full h-full object-cover" src="../../assets/img/anneau.png" alt="">
+                </a>
+            </div>
+            <p class="ml-5 w-32 text-left">{{anneau.name}}</p>
+            <div
+                class="rounded-md 0 overflow-hidden h-24 w-24 ml-4 mt-2 border-2 hover:bg-yellow-400 transition-colors">
+                <a href="ceinture" class="block h-24 w-24">
+                    <img class="w-full h-full object-cover" src="../../assets/img/ceinture.png" alt="">
+                </a>
+            </div>
+            <p class="ml-5 w-32 text-left">{{ceinture.name}}</p>
+            <div
+                class="rounded-md 0 overflow-hidden h-24 w-24 ml-4 mt-2 border-2 hover:bg-yellow-400 transition-colors">
+                <a href="botte" class="block h-24 w-24">
+                    <img class="w-full h-full object-cover" src="../../assets/img/sandale.png" alt="">
+                </a>
+            </div>
+            <p class="ml-5 w-32 text-left">{{bottes.name}}</p>
+        </div>
+        <div class="flex flex-row p-10">
+            <img src="../../assets/img/cra.png" alt="" class="w-96">
+        </div>
+        
+        <div class="flex flex-col mt-8">
+            <div class="rounded-md 0 overflow-hidden h-24 w-24 mr-4 border-2 hover:bg-yellow-400 transition-colors">
+                <a href="coiffe" class="block h-24 w-24">
+                    <img class="h-24 w-24 object-cover" src="../../assets/img/coiffe.png" alt="">
+                </a>
+            </div>
+            <p class="w-32 text-left">{{coiffe.name}}</p>
+            <div class="rounded-md 0 overflow-hidden h-24 w-24 mr-4 mt-2 border-2 hover:bg-yellow-400 transition-colors">
+                <a href="armes" class="block h-24 w-24">
+                    <img class="h-24 w-24 object-cover" src="../../assets/img/torkelonia.png" alt="">
+                </a>
+            </div>
+            <p class=" w-32 text-left">{{arme.name}}</p>
+            <div class="rounded-md 0 overflow-hidden h-24 w-24 mr-4 mt-2 border-2 hover:bg-yellow-400 transition-colors">
+                <a href="anneau" class="block h-24 w-24">
+                    <img class="h-24 w-24 object-cover" src="../../assets/img/anneau2.png" alt="">
+                </a>
+            </div>
+            <p class=" w-32 text-left">{{anneau.name}}</p>
+            <div class="rounded-md 0 overflow-hidden h-24 w-24 mr-4 mt-2 border-2 hover:bg-yellow-400 transition-colors">
+                <a href="cape" class="block h-24 w-24">
+                    <img class="h-24 w-24 object-cover" src="../../assets/img/cape.png" alt="">
+                </a>
+            </div>
+            <p class=" w-32 text-left">{{cape.name}}</p>
+            <div class="rounded-md 0 overflow-hidden h-24 w-24 mr-4 mt-2 border-2 hover:bg-yellow-400 transition-colors">
+                <a href="familier" class="block h-24 w-24">
+                    <img class="h-24 w-24 object-cover" src="../../assets/img/familier.png" alt="">
+                </a>
+            </div>
+            <p class=" w-32 text-left">{{familier.name}}</p>
+        </div>
+        <div class=" flex flex-col bg-gray-900 items-center  border-solid border-2 p-10 rounded-xl">
+            <div class="flex flex-row mt-8 ">
+                <div class=" flex flex-col  bg-gray-900 h-12 ">
+                    <div class="flex flex-row ">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Dommage</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td >{{this.personnage.dommagesNeutres}}</td>
+                                    <td><img src="../../assets/img/neutre.png" class="w-image-width h-image-height"
+                                            alt=""></td>
+                                    <td>Do neutre</td>
+                                </tr>
+                                <tr>
+                                    <td>{{this.personnage.dommagesTerre}}</td>
+                                    <td><img src="../../assets/img/terre.png" class="w-image-width h-image-height"
+                                            alt=""></td>
+                                    <td>Do terre</td>
+                                </tr>
+                                <tr>
+                                    <td>{{this.personnage.dommagesEau}} </td>
+                                    <td><img src="../../assets/img/eau.png" class="w-image-width h-image-height" alt="">
+                                    </td>
+                                    <td>Do eau</td>
+                                </tr>
+                                <tr>
+                                    <td>{{this.personnage.dommagesFeu}}</td>
+                                    <td><img src="../../assets/img/feu.png" class="w-image-width h-image-height" alt="">
+                                    </td>
+                                    <td>Do Feu</td>
+                                </tr>
+                                <tr>
+                                    <td>{{this.personnage.dommagesAir}}</td>
+                                    <td><img src="../../assets/img/agi.png" class="w-image-width h-image-height" alt="">
+                                    </td>
+                                    <td>Do Air</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class=" flex flex-col ml-5 bg-gray-900  ">
+                    <div class="flex flex-row ">
+                        <table class="parcho">
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Résistance</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-right">{{this.personnage.resistanceNeutre}}</td>
+                                    <td><img src="../../assets/img/neutre.png" class="w-image-width h-image-height"
+                                            alt=""></td>
+                                    <td>% neutre</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">{{this.personnage.resistanceTerre}}</td>
+                                    <td><img src="../../assets/img/terre.png" class="w-image-width h-image-height"
+                                            alt=""></td>
+                                    <td>% terre</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">{{this.personnage.resistanceEau}}</td>
+                                    <td><img src="../../assets/img/eau.png" class="w-image-width h-image-height" alt="">
+                                    </td>
+                                    <td>% eau</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">{{this.personnage.resistanceFeu}}</td>
+                                    <td><img src="../../assets/img/feu.png" class="w-image-width h-image-height" alt="">
+                                    </td>
+                                    <td>% Feu</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">{{this.personnage.resistanceAir}}</td>
+                                    <td><img src="../../assets/img/agi.png" class="w-image-width h-image-height" alt="">
+                                    </td>
+                                    <td>% Air</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-16 items-center justify-center">
+                <button
+                    class="bg-button-color rounded-full px-4 py-2 font-semibold hover:bg-yellow-400" (click)="addStuff()">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+</div>

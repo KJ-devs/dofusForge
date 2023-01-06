@@ -1,0 +1,79 @@
+<div class="bg-gray-800 h-screen p-4 flex justify-center items-center">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Stuff
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Coiffe
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Cape
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Amulette
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Anneau
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Ceinture
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Botte
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Armes
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Bouclier
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Familier
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Supprimer
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let stuff of stuffs'class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    X
+                </th>
+                <td class="px-6 py-4">
+                    {{stuff.coiffe}}
+                </td>
+                <td class="px-6 py-4">
+                    {{stuff.cape}}
+                </td>
+                <td class="px-6 py-4">
+                    {{stuff.amulette}}
+                </td>
+                <td class="px-6 py-4">
+                    {{stuff.anneau}}
+                </td>
+                <td class="px-6 py-4">
+                    {{stuff.ceinture}}
+                </td>
+                <td class="px-6 py-4">
+                    {{stuff.bottes}}
+                </td>
+                <td class="px-6 py-4">
+                    {{stuff.arme}}
+                </td>
+                <td class="px-6 py-4">
+                    {{stuff.bouclier}}
+                </td>
+                <td class="px-6 py-4">
+                    {{stuff.familier}}
+                </td>
+                <td class="px-6 py-4">
+                    <button (click)="(supprimer(stuff.id))" class="bg-red-600 text-white p-3 rounded-md md:hover:bg-red-700 transitions-colors" >Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,168 @@
+<div class="bg-gray-800 h-full p-4 flex justify-center items-center">
+        <div class="grid grid-cols-3 mt-16 gap-4">
+                <div class="col-span-1" *ngFor="let equipment of equipments; let i = index">
+                        <div class="bg-gray-900  relative p-4 rounded shadow-md h-box-height-anneau">
+                                <h2 class="text-xl font-bold text-center text-yellow-300">{{ equipment.name }}</h2>
+                                <p class="text-center text-yellow-400"> Niveau : {{equipment.level}}</p>
+                                <div class="flex flex-col text-white " *ngFor="let stat of equipment.statistics">
+                                        <div class="flex flex-row items-center" *ngIf="stat['Vitalité']"><img
+                                                        class="w-image-width mr-2" src="../../assets/img/life.png"
+                                                        alt=""><span>{{ stat['Vitalité'] ?
+                                                        stat['Vitalité'].min: ""}}</span><span class="ml-1 mr-1"> à
+                                                </span><span>{{
+                                                        stat['Vitalité'] ?
+                                                        stat['Vitalité'].max : ""}}</span><span class="ml-1">Vitalité</span>
+                                        </div>
+                                        <div class="flex flex-row items-center" *ngIf="stat.Sagesse"><img
+                                                        class="w-image-width mr-2" src="../../assets/img/sagesse.png"
+                                                        alt=""> <span>{{ stat.Sagesse ? stat.Sagesse.min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à
+                                                </span><span>{{ stat.Sagesse ? stat.Sagesse.max : "" }}</span><span class="ml-1">Sagesse</span></div>
+                                        <div class="flex flex-row items-center" *ngIf="stat.Intelligence"> <img
+                                                        class="w-image-width mr-2" src="../../assets/img/feu.png">
+                                                <span>{{ stat.Intelligence ? stat.Intelligence.min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à </span><span>{{
+                                                        stat.Intelligence ?
+                                                        stat.Intelligence.max : "" }}</span><span class="ml-1">Intelligence</span>
+                                        </div>
+                                        <div class="flex flex-row items-center" *ngIf="stat.Force"> <img
+                                                        class="w-image-width mr-2" src="../../assets/img/terre.png">
+                                                <span>{{ stat.Force ? stat.Force.min : "" }}</span>
+                                                <span class="ml-1 mr-1"> à </span><span>{{ stat.Force ? stat.Force.max :
+                                                        "" }}</span><span class="ml-1">Force</span>
+                                        </div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['Agilité']"><img
+                                                class="w-image-width mr-2" src="../../assets/img/agi.png">
+                                                <span>{{ stat['Agilité'] ? stat['Agilité'].min : "" }}
+                                                </span><span class="ml-1 mr-1"> à </span><span>{{ stat['Agilité'] ?
+                                                stat['Agilité'].max : "" }}</span><span class="ml-1">Agilité</span>
+                                        </div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['Chance']"><img
+                                                class="w-image-width mr-2" src="../../assets/img/eau.png">
+                                                <span>{{ stat['Chance'] ? stat['Chance'].min : "" }}
+                                                </span><span class="ml-1 mr-1"> à </span><span>{{ stat['Chance'] ?
+                                                stat['Chance'].max : "" }}</span><span class="ml-1">Chance</span>
+                                        </div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['Puissance']"><img
+                                                        class="w-image-width mr-2" src="../../assets/img/puissance.png">
+                                                <span>{{ stat['Puissance'] ? stat['Puissance'].min : "" }}
+                                                </span><span class="ml-1 mr-1"> à </span><span>{{ stat['Puissance'] ?
+                                                        stat['Puissance'].max : "" }}</span><span
+                                                        class="ml-1">Puissance</span>
+                                        </div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['Prospection']"><img
+                                                        class="w-image-width mr-2" src="../../assets/img/pp.png">
+                                                <span>{{ stat['Prospection'] ? stat['Prospection'].min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à </span><span>{{
+                                                        stat['Prospection'] ?
+                                                        stat['Prospection'].max : ""
+                                                        }}</span><span class="ml-1">Prospection</span>
+                                        </div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['% Critique']"><img
+                                                class="w-image-width mr-2" src="../../assets/img/critique.png">
+                                        <span>{{ stat['% Critique'] ? stat['% Critique'].min : ""
+                                                }}</span><span class="ml-1 mr-1"> à </span><span>{{
+                                                stat['% Critique'] ?
+                                                stat['% Critique'].max : ""
+                                                }}</span><span class="ml-1">% Critique</span>
+                                        </div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['Dommages Neutre']"><img
+                                                        class="w-image-width h-image-height mr-2"
+                                                        src="../../assets/img/neutre.png"> <span>{{ stat['Dommages Neutre'] ? stat['Dommages Neutre'].min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à </span><span>{{
+                                                        stat['Dommages Neutre'] ?
+                                                        stat['Dommages Neutre'].max : ""
+                                                        }}</span><span class="ml-1">Do Neutre</span></div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['Dommages Terre']"><img
+                                                        class="w-image-width h-image-height mr-2"
+                                                        src="../../assets/img/terre.png"> <span>{{ stat['Dommages Terre'] ?
+                                                        stat['Dommages Terre'].min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à </span><span>{{
+                                                        stat['Dommages Terre'] ?
+                                                        stat['Dommages Terre'].max : ""
+                                                        }}</span><span class="ml-1">Do Terre</span></div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['Dommages Feu']"><img
+                                                        class="w-image-width h-image-height mr-2"
+                                                        src="../../assets/img/feu.png"> <span>{{ stat['Dommages Feu'] ?
+                                                        stat['Dommages Feu'].min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à </span><span>{{
+                                                        stat['Dommages Feu'] ?
+                                                        stat['Dommages Feu'].max : ""
+                                                        }}</span><span class="ml-1">Do Feu</span></div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['Dommages Eau']"><img
+                                                        class="w-image-width h-image-height mr-2"
+                                                        src="../../assets/img/eau.png"> <span>{{ stat['Dommages Eau'] ?
+                                                        stat['Dommages Eau'].min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à </span><span>{{
+                                                        stat['Dommages Eau'] ?
+                                                        stat['Dommages Eau'].max : ""
+                                                        }}</span><span class="ml-1">Do Eau</span></div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['Dommages Air']"><img
+                                                        class="w-image-width h-image-height mr-2"
+                                                        src="../../assets/img/agi.png"> <span>{{ stat['Dommages Air'] ?
+                                                        stat['Dommages Air'].min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à </span><span>{{
+                                                        stat['Dommages Air'] ?
+                                                        stat['Dommages Air'].max : ""
+                                                        }}</span><span class="ml-1">Do Air</span></div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['% Résistance Neutre']"><img
+                                                        class="w-image-width h-image-height mr-2"
+                                                        src="../../assets/img/neutre.png"> <span>{{ stat['% Résistance Neutre'] ? stat['% Résistance Neutre'].min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à </span><span>{{ stat['% Résistance Neutre'] ?
+                                                        stat['% Résistance Neutre'].max : ""
+                                                        }}</span><span class="ml-1">% Résistance Neutre</span></div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['% Résistance Terre']"><img
+                                                        class="w-image-width h-image-height mr-2"
+                                                        src="../../assets/img/terre.png"> <span>{{ stat['% Résistance Terre'] ?
+                                                        stat['% Résistance Terre'].min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à </span><span>{{ stat['% Résistance Terre'] ?
+                                                        stat['% Résistance Terre'].max : ""
+                                                        }}</span><span class="ml-1">% Résistance Terre</span></div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['% Résistance Feu']"><img
+                                                        class="w-image-width h-image-height mr-2"
+                                                        src="../../assets/img/feu.png"> <span>{{ stat['% Résistance Feu'] ?
+                                                        stat['% Résistance Feu'].min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à </span><span>{{ stat['% Résistance Feu'] ?
+                                                        stat['% Résistance Feu'].max : ""
+                                                        }}</span><span class="ml-1">% Resistance Feu</span></div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['% Résistance Eau']"><img
+                                                        class="w-image-width h-image-height mr-2"
+                                                        src="../../assets/img/eau.png"> <span>{{ stat['% Résistance Eau'] ?
+                                                        stat['% Résistance Eau'].min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à </span><span>{{ stat['% Résistance Eau'] ?
+                                                        stat['% Résistance Eau'].max : ""
+                                                        }}</span><span class="ml-1">% Résistance Eau</span></div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['% Résistance Air']"><img
+                                                        class="w-image-width h-image-height mr-2"
+                                                        src="../../assets/img/agi.png"> <span>{{ stat['% Résistance Air'] ?
+                                                        stat['% Résistance Air'].min : ""
+                                                        }}</span><span class="ml-1 mr-1"> à </span><span>{{ stat['% Résistance Air'] ?
+                                                        stat['% Résistance Air'].max : ""
+                                                        }}</span><span class="ml-1">% Résistance Air</span></div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['PA']"><img
+                                                        class="w-image-width mr-2" src="../../assets/img/pa.png">
+                                                <span>{{ stat['PA'] ? stat['PA'].min : ""
+                                                        }}</span><span>{{ stat['PA'] ? stat['PA'].max : ""
+                                                        }}</span><span class="ml-1">PA</span>
+                                        </div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['PM']"><img
+                                                        class="w-image-width mr-2" src="../../assets/img/pm.png">
+                                                <span>{{ stat['PM'] ? stat['PM'].min : ""
+                                                        }}</span><span>{{ stat['PM'] ? stat['PM'].max : ""
+                                                        }}</span><span class="ml-1">PM</span>
+                                        </div>
+                                        <div class="flex flex-row items-center" *ngIf="stat['PO']"><img
+                                                        class="w-image-width mr-2" src="../../assets/img/portee.png">
+                                                <span>{{ stat['PO'] ? stat['PO'].min : ""
+                                                        }}</span><span>{{ stat['PO'] ? stat['PO'].max : ""
+                                                        }}</span><span class="ml-1">PO</span>
+                                        </div>
+                                        <button (click)="getEquipementById(equipment,'Anneau')"
+                                                class="bg-blue-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded-full absolute self-center bottom-4">
+                                                +
+                                        </button>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>

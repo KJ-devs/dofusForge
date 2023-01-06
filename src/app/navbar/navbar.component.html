@@ -1,0 +1,35 @@
+<nav class=" bg-gray-900 absolute w-full ">
+    <div class=" container flex flex-wrap items-center justify-between mx-auto">
+        <a href="" class="flex items-center md:hover:text-yellow-400" >
+            <img src="../../assets/img/dofusForgeLogo.png" class="h-12 mr-2 sm:h-18" alt="Dofus Logo" />
+            <span class="text-yellow-300 font-semibold text-xl">D</span><span
+                class="self-center text-xl  font-semibold whitespace-nowrap text-white">ofus</span><span
+                class="text-yellow-300 font-semibold text-xl">F</span><span
+                class="self-center text-xl font-semibold whitespace-nowrap text-white">orge</span>
+        </a>
+        <ul
+            class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <li>
+                <a href=""
+                    class="block py-2 pl-3 pr-4 text-white bg--700 rounded md:bg-transparent md:text-yellow-600 md:p-0 md:hover:text-yellow-400 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent"
+                    aria-current="page">Home</a>
+            </li>
+            <li *ngIf="!token">
+                <a href="Connexion"
+                    class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Connexion
+                </a>
+            </li>
+            <li *ngIf="token">
+                <a href="allStuff"
+                    class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                   Stuff communautaire</a>
+            </li>
+            <li *ngIf="token"><button type="button " class="text-white md:hover:text-yellow-400 "(click)="logout()">Déconnexion</button></li>
+          
+
+
+        </ul>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
