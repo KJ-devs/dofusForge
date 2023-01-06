@@ -91,7 +91,7 @@ export class CreationStuffComponent implements OnInit {
     }
   }
   getAllStatsOfAllItems() {
-    const items = [this.amulette, this.anneau, this.ceinture, this.coiffe, this.cape, this.bottes, this.bouclier, this.familier, this.arme];
+    const items = [this.amulette , this.anneau , this.ceinture, this.coiffe, this.cape , this.bottes, this.bouclier, this.familier , this.arme ];
     for (const item of items) {
       for (const key of item.statistics) {
         if (key['Vitalité']) {
@@ -279,6 +279,17 @@ export class CreationStuffComponent implements OnInit {
       arme: this.arme.name,
       familier: this.familier.name,
   }
-  this.StuffService.createNewStuff(stuff);  
+ 
+  this.StuffService.createNewStuff(stuff);
+  localStorage.removeItem('Amulette')
+  localStorage.removeItem('anneau')
+  localStorage.removeItem('ceinture')
+  localStorage.removeItem('coiffe')
+  localStorage.removeItem('cape')
+  localStorage.removeItem('bottes')
+  localStorage.removeItem('bouclier')
+  localStorage.removeItem('arme')
+  localStorage.removeItem('familier')
+
 }
 }
